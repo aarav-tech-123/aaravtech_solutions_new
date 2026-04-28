@@ -538,9 +538,9 @@ if ($result === false) {
                                 </div>
 
                                 <div class="submenu">
-                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/seo-services.html">SEO</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/ppc-marketing-services.html">PPC</a>
                                     <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
