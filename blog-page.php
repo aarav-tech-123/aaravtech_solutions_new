@@ -1,0 +1,1436 @@
+<?php
+
+// --------------------
+// Database connection
+// --------------------
+// ✅ Connect to local XAMPP MySQL database
+$servername = "localhost";
+$username = "u868210921_OWGYP";
+$password = "pQTZ0sfkdM";
+$dbname = "u868210921_RXjAJ";  // your DB name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Database Connection failed: " . $conn->connect_error);
+}
+
+// --------------------
+// Validate blog ID
+// --------------------
+if (!isset($_GET['slug'])) {
+    die("Invalid blog slug");
+}
+
+$slug = $_GET['slug'];
+$sql = "SELECT * FROM wp_posts WHERE post_name = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $slug);;
+
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die("Blog not found!");
+}
+
+$blog = $result->fetch_assoc();
+$stmt->close();
+
+$sql_meta = "
+    SELECT meta_key, meta_value
+    FROM wp_postmeta
+    WHERE post_id = ?
+";
+
+$stmt_meta = $conn->prepare($sql_meta);
+$stmt_meta->bind_param("i", $blog['ID']);
+$stmt_meta->execute();
+$result_meta = $stmt_meta->get_result();
+
+$post_meta = [];
+while ($row = $result_meta->fetch_assoc()) {
+    $post_meta[$row['meta_key']] = $row['meta_value'];
+}
+
+$stmt_meta->close();
+
+// Fetch published blog posts
+$sql = "SELECT ID, post_title, post_content, post_date, post_author,post_name
+        FROM wp_posts
+        WHERE post_type='post' AND post_status='publish' AND post_name != '$slug'
+        ORDER BY post_date DESC";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("❌ SQL Error: " . $conn->error);
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="<?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?>">
+    <meta name="description" content="<?php echo htmlspecialchars($post_meta['rank_math_description'] ?? 'Default meta description here.'); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($post_meta['rank_math_focus_keyword'] ?? ''); ?>">
+    <link rel="canonical" href="https://aaravtech.net/blogs/<?php echo $slug; ?>" />
+    <title><?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?></title>
+
+    <!-- CSS -->
+    <link href="https://aaravtech.net/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://aaravtech.net/css/style.css">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSPXHW6R');
+    </script>
+    <!-- End Google Tag Manager -->
+    <style>
+        :root {
+            --bs-bg-light: #FFFFFF;
+            --bs-dark: #1A1A2E;
+            --bs-text-primary: #2D3748;
+            --bs-text-secondary: #4A5568;
+            --bs-text-muted: #718096;
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --accent-lighter: #E9D8FD;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-light: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+            --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F7FAFC 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-light: 1px solid #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bs-bg-light);
+            color: var(--bs-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: var(--border-light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--bs-dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 32px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--bs-text-primary);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Blog Hero Section */
+        .blog-hero {
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+            text-align: center;
+            border-bottom: var(--border-light);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* border-radius: 20px; */
+            margin-bottom: 40px;
+        }
+
+        .blog-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent-lighter);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .blog-hero h1 {
+            font-size: 35px;
+            margin-bottom: 24px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: var(--bs-light);
+        }
+
+        .blog-hero h1 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(106, 13, 173, 0.1) 100%);
+            color: var(--accent);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+            }
+        }
+
+
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            color: var(--bs-text-muted);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .blog-meta i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* Blog Content Section */
+        .blog-content-section {
+            position: relative;
+            background: var(--bs-bg-light);
+        }
+
+        .blog-content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        /* .blog-content-wrapper:hover {
+        transform: translateY(-5px);
+    } */
+
+        .blog-featured-image {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--bs-text-primary);
+        }
+
+        .blog-content h1,
+        .blog-content h2,
+        .blog-content h3,
+        .blog-content h4 {
+            color: var(--bs-dark);
+            margin: 30px 0 20px;
+            font-weight: 600;
+        }
+
+        .blog-content h1 {
+            font-size: 32px;
+            /* border-bottom: 2px solid var(--accent-lighter); */
+            padding-bottom: 10px;
+        }
+
+        .blog-content h2 {
+            font-size: 28px;
+        }
+
+        .blog-content h3 {
+            font-size: 24px;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: var(--bs-text-secondary);
+        }
+
+        .blog-content a {
+            color: #8c82ff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .blog-content a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+            color: var(--bs-text-secondary);
+        }
+
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 20px 20px 20px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--bs-text-secondary);
+            background: var(--accent-lighter);
+            border-radius: 0 10px 10px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .blog-content code {
+            background: var(--accent-lighter);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+        }
+
+        .blog-content pre {
+            background: var(--bs-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 20px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-light);
+            border-top: var(--border-light);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--bs-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--bs-text-secondary);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 16px 38px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+
+        .blog-section {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .blog-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h4 {
+            font-weight: bold;
+            color: #191133;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .read-more-btn {
+            color: #7872b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .blog-hero h1 {
+                font-size: 42px;
+            }
+
+            .cta-section h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 20px 0 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 8px 12px;
+            }
+
+            .blog-hero {
+                padding: 150px 0 60px;
+            }
+
+            .blog-hero h1 {
+                font-size: 36px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .blog-content-wrapper {
+                padding: 30px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-hero h1 {
+                font-size: 32px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+            }
+
+            .blog-content {
+                font-size: 16px;
+            }
+
+            .blog-content h1 {
+                font-size: 28px;
+            }
+
+            .blog-content h2 {
+                font-size: 24px;
+            }
+
+            .blog-content h3 {
+                font-size: 20px;
+            }
+        }
+
+        .our-blogs-section {
+            background: var(--gradient-bg);
+            padding: 100px 0;
+            color: var(--bs-bg-light);
+        }
+
+        .our-blogs-container {
+            max-width: 1600px !important;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header .subheading {
+            color: var(--accent-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .section-header .title {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+
+
+        .cta-section {
+            position: relative;
+            /* background: linear-gradient(
+    180deg,
+    #0B011C 0%,
+    #1a0938 40%,
+    #2C1C6E 70%,
+    #3F2A89 100%
+  ); */
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px;
+            overflow: hidden;
+        }
+
+        /* Headline */
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #EAE8FF;
+            margin-bottom: 40px;
+        }
+
+        .cta-content .highlight {
+            color: #5A50F2;
+        }
+
+        .cta-content .highlight-alt {
+            color: #9C94FF;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn {
+            padding: 14px 28px;
+            font-size: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        /* Primary button */
+        .btn-primary {
+            background: linear-gradient(45deg, #5A50F2, #483BDB);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(90, 80, 242, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #6C63FF, #5A50F2);
+            transform: translateY(-3px);
+            color: var(--bs-white);
+        }
+
+        /* Outline button */
+        .btn-outline {
+            border: 2px solid #5A50F2;
+            color: #EAE8FF;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #5A50F2;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta-section {
+                padding: 100px 20px;
+            }
+        }
+
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .subheading {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #8c82ff;
+            margin-bottom: 10px;
+        }
+
+        .section-header .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .blog-section {
+            color: #fff;
+            padding: 50px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header .subheading {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #8c82ff;
+            margin-bottom: 10px;
+        }
+
+        .section-header .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .blog-slider {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.6s ease-in-out;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding: 1rem 0;
+        }
+
+        .blog-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .blog-card {
+            flex: 0 0 350px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 20px 20px 0;
+        }
+
+        .blog-image {
+            position: relative;
+            /* height: 200px; */
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-image .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(11, 1, 28, 0) 0%, rgba(11, 1, 28, 0.8) 100%);
+        }
+
+        .blog-content {
+            padding: 20px;
+            color: #c3c6d1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #8c82ff;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more i {
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Slider buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 5;
+            border-radius: 50%;
+        }
+
+        .slider-btn:hover {
+            background: #8c82ff;
+            box-shadow: 0 0 15px rgba(140, 130, 255, 0.5);
+        }
+
+        .slider-btn.left {
+            left: 20px;
+        }
+
+        .slider-btn.right {
+            right: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-card {
+                flex: 0 0 280px;
+            }
+
+            .blog-image {
+                height: 160px;
+            }
+        }
+
+        .blog-cta-container {
+            background: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSPXHW6R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- Header -->
+    <?php
+    $author_id = $blog['post_author'];
+    $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+    $author = ($author_result && $author_result->num_rows > 0)
+        ? $author_result->fetch_assoc()['display_name']
+        : "Unknown";
+
+    $image_result = $conn->query("
+                        SELECT meta_value FROM wp_postmeta
+                        WHERE post_id = {$blog['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                    ");
+    $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+        ? $image_result->fetch_assoc()['meta_value']
+        : 0;
+
+    $img_url = '';
+    if ($thumbnail_id) {
+        $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+        $img_url = ($guid_result && $guid_result->num_rows > 0)
+            ? $guid_result->fetch_assoc()['guid']
+            : '';
+    }
+    ?>
+    <div class="container-fluid header position-relative p-0">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
+            <a href="https://aaravtech.net" class="navbar-brand p-0">
+                <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
+            </a>
+            <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <div class="submenu-wrapper">
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
+
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+
+                                <div class="submenu">
+                                    <a class="dropdown-item" href="https://aaravtech.net/seo-company-in-india.html">SEO</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization-services.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/best-ppc-marketing-agency.html">PPC</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/web-development-services.html" class="submenu-link ">Web Development</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                </div>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
+                            </div>
+                            <div class="submenu-wrapper">
+                                <div class="dropdown-item submenu-parent">
+                                    <a href="https://aaravtech.net/bpo-services.html" class="submenu-link ">BPO</a>
+                                    <button class="submenu-toggle" type="button">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <div class="submenu ">
+                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="https://aaravtech.net/call-center-services.html">Call Centre Services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
+                </div>
+                <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
+            </div>
+        </nav>
+        <!-- Blog Hero Section -->
+
+        <section class="blog-hero">
+            <div class="container">
+                <h1><?php echo htmlspecialchars($blog['post_title']); ?></h1>
+                <div class="blog-meta">
+                    <span><i class="fas fa-calendar-alt"></i> <?php echo date("F j, Y", strtotime($blog['post_date'])); ?></span>
+                    <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($author); ?></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content-section">
+        <div class="container">
+            <?php if ($img_url): ?>
+                <img src="<?php echo $img_url; ?>" class="blog-image" style="border-radius: 20px;"
+                    alt="<?php echo htmlspecialchars($row['post_title']); ?>">
+            <?php else: ?>
+                <div class="blog-content-wrapper">
+
+                    <div class="blog-image" style="background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; ">
+                        <i class="fas fa-newspaper" style="font-size: 48px; color: white;"></i>
+                    </div>
+                <?php endif; ?>
+
+                <div class="blog-content">
+                    <?php echo $blog['post_content']; ?>
+                </div>
+
+                <!-- Blog Tags -->
+                <!-- <div class="blog-tags mt-5 pt-4 border-top">
+                        <strong class="text-dark me-3">Tags:</strong>
+                        <span class="badge bg-light text-dark border me-2">Digital Marketing</span>
+                        <span class="badge bg-light text-dark border me-2">SEO</span>
+                        <span class="badge bg-light text-dark border me-2">Web Development</span>
+                    </div> -->
+                </div>
+        </div>
+    </section>
+
+    <div class="blog-cta-container">
+        <section class="blog-section">
+            <div class="container" style="max-width: 1200px;">
+                <div class="section-header">
+                    <p class="subheading">Our Blogs</p>
+                    <h2 class="title" style="text-align: center;">Latest Insights & Stories</h2>
+                </div>
+
+                <div class="blog-slider-wrapper">
+                    <button class="slider-btn left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="blog-slider">
+                        <?php if ($result->num_rows > 0): ?>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <?php
+                                $author_id = $row['post_author'];
+                                $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
+                                $author = ($author_result && $author_result->num_rows > 0)
+                                    ? $author_result->fetch_assoc()['display_name']
+                                    : "Unknown";
+
+                                $image_result = $conn->query("
+                        SELECT meta_value FROM wp_postmeta
+                        WHERE post_id = {$row['ID']} AND meta_key = '_thumbnail_id' LIMIT 1
+                    ");
+                                $thumbnail_id = ($image_result && $image_result->num_rows > 0)
+                                    ? $image_result->fetch_assoc()['meta_value']
+                                    : 0;
+
+                                $img_url = '';
+                                if ($thumbnail_id) {
+                                    $guid_result = $conn->query("SELECT guid FROM wp_posts WHERE ID = $thumbnail_id");
+                                    $img_url = ($guid_result && $guid_result->num_rows > 0)
+                                        ? $guid_result->fetch_assoc()['guid']
+                                        : '';
+                                }
+                                ?>
+                                <div class="blog-card">
+                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                                    <?php if ($img_url): ?>
+                                        <div class="blog-image" style="margin-bottom: 0;">
+                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="blog-image" style="margin-bottom: 0;">
+                                            <img src="img/about_us.png" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-content">
+                                        <p style="color:#c3c6d1;"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <div class="col-12 text-center">
+                                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon for new articles!</p>
+                            </div>
+                        <?php endif; ?>
+
+
+                    </div>
+
+                    <button class="slider-btn right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Call To Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Create Something Amazing Together</h2>
+                <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
+                    thrive in the digital landscape.</p>
+                <div class="hero-buttons">
+                    <a href="https://aaravtech.net/contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-shape">
+        </div>
+
+        <div class="container-fluid footer-container" style="padding: 0 2rem;">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <!-- SVG Logo -->
+                        <!-- <svg width="50" height="50" viewBox="0 0 50 50">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4dabf7" />
+                                    <stop offset="100%" stop-color="#1a2a6c" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="5" y="5" width="40" height="40" rx="8" fill="url(#logoGradient)" />
+                            <path d="M15,15 L35,15 L35,35 L15,35 Z" fill="none" stroke="white" stroke-width="2" />
+                            <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
+                            <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
+                        </svg> -->
+                        <div class="footer-logo-text">AaravTechServices</div>
+                    </div>
+                    <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
+                        team of experts delivers innovative software and consulting services.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="https://aaravtech.net/about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        </li>
+                        <li><a href="https://aaravtech.net/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        </li>
+                        <li><a href="https://aaravtech.net/career.php"><i class="fas fa-chevron-right"></i>Career</a>
+                        </li>
+                        <li><a href="https://aaravtech.net/contact.html"><i class="fas fa-chevron-right"></i>
+                                Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://aaravtech.net/custom-website-development-services.html"><i
+                                    class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="https://aaravtech.net/web-and-mobile-app-development.html"><i
+                                    class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="https://aaravtech.net/graphic-designing.html"><i
+                                    class="fas fa-chevron-right"></i>Graphic Designing</a></li>
+                        <li><a href="https://aaravtech.net/digital-marketing-services.html"><i class="fas fa-chevron-right"></i>
+                                Digital Marketing</a></li>
+                        <li><a href="https://aaravtech.net/ui-ux-design-services.html"><i
+                                    class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="https://aaravtech.net/bpo-services.html"><i class="fas fa-chevron-right"></i>BPO
+                                Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kanpur Nagar, Uttar Pradesh, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7318083502</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@aaravtech.net</span>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
+                    <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">|</p>
+                <div class="footer-bottom-links">
+                    <a href="https://aaravtech.net/privacy-policy.html">Privacy Policy</a>
+                    <a href="https://aaravtech.net/terms-and-conditions.html">Terms of Service</a>
+                    <a href="https://aaravtech.net/sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://aaravtech.net/js/main.js"></script>
+    <script src="https://aaravtech.net/index.js"></script>
+    <script>
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+
+            if (window.scrollY > 50) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for back to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script>
+        const slider = document.querySelector(".blogs-slider");
+        const leftBtn = document.querySelector(".slider-btn.left");
+        const rightBtn = document.querySelector(".slider-btn.right");
+
+        if (slider && leftBtn && rightBtn) {
+            const cardWidth = 380; // approximate width + gap
+
+            rightBtn.addEventListener("click", () => {
+                slider.scrollBy({
+                    left: cardWidth,
+                    behavior: "smooth"
+                });
+            });
+
+            leftBtn.addEventListener("click", () => {
+                slider.scrollBy({
+                    left: -cardWidth,
+                    behavior: "smooth"
+                });
+            });
+
+            // Optional: auto-slide every few seconds
+            // setInterval(() => {
+            //     slider.scrollBy({
+            //         left: cardWidth,
+            //         behavior: "smooth"
+            //     });
+            // }, 5000);
+        }
+    </script>
+</body>
+
+</html>
+<?php
+$conn->close();
+?>
