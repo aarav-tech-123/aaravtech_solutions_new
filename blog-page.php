@@ -80,12 +80,12 @@ if ($result === false) {
     <meta name="title" content="<?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?>">
     <meta name="description" content="<?php echo htmlspecialchars($post_meta['rank_math_description'] ?? 'Default meta description here.'); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($post_meta['rank_math_focus_keyword'] ?? ''); ?>">
-    <link rel="canonical" href="https://aaravtech.net/blogs/<?php echo $slug; ?>" />
+    <link rel="canonical" href="https://aaravtechsolutions.com/blogs/<?php echo $slug; ?>" />
     <title><?php echo htmlspecialchars($post_meta['rank_math_title'] ?? $blog['post_title']); ?></title>
 
     <!-- CSS -->
-    <link href="https://aaravtech.net/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://aaravtech.net/css/style.css">
+    <link href="https://aaravtechsolutions.com/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://aaravtechsolutions.com/css/style.css">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
@@ -1049,22 +1049,22 @@ if ($result === false) {
     ?>
     <div class="container-fluid header position-relative p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-lg-5 py-3 py-lg-0">
-            <a href="https://aaravtech.net" class="navbar-brand p-0">
-                <img src="https://aaravtech.net/img/company_logo_white.svg" alt="" id="toggleImg" style="transition: all ease .8s;">
+            <a href="https://aaravtechsolutions.com" class="navbar-brand p-0">
+                <img src="https://aaravtechsolutions.com/img/company_logo.png" alt="" id="toggleImg" style="transition: all ease .8s;">
             </a>
             <button class="navbar-toggler navbar-toggler-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="https://aaravtech.net" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
-                    <a href="https://aaravtech.net/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
+                    <a href="https://aaravtechsolutions.com" class="nav-item nav-link " style="color:var(--bs-white) !important">Home</a>
+                    <a href="https://aaravtechsolutions.com/about.html" class="nav-item nav-link navlink-white" style="color:var(--bs-white) !important">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color:var(--bs-white) !important">Services</a>
                         <div class="dropdown-menu m-0">
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
+                                    <a href="https://aaravtechsolutions.com/digital-marketing-services.html" class="submenu-link ">Digital Marketing</a>
 
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
@@ -1072,45 +1072,45 @@ if ($result === false) {
                                 </div>
 
                                 <div class="submenu">
-                                    <a class="dropdown-item" href="https://aaravtech.net/seo-services.html">SEO</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/social-media-optimization.html">SMO/SMM</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/ppc-marketing-services.html">PPC</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/content-marketing-services.html">Content Marketing</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/seo-services.html">SEO</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/social-media-optimization.html">SMO/SMM</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/ppc-marketing-services.html">PPC</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/content-marketing-services.html">Content Marketing</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/web-development-services.html" class="submenu-link ">Web Development</a>
+                                    <a href="https://aaravtechsolutions.com/web-development-services.html" class="submenu-link ">Web Development</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                 </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/custom-website-development-services.html">Custom Website Development</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/ui-ux-design-services.html">UI/UX Design</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/web-and-mobile-app-development.html">Web/Mobile App Development</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/custom-website-development-services.html">Custom Website Development</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/ui-ux-design-services.html">UI/UX Design</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/web-and-mobile-app-development.html">Web/Mobile App Development</a>
                                 </div>
                             </div>
                             <div class="submenu-wrapper">
-                                <a href="https://aaravtech.net/logo-design-services.html" class="dropdown-item">Logo Design</a>
+                                <a href="https://aaravtechsolutions.com/logo-design-services.html" class="dropdown-item">Logo Design</a>
                             </div>
                             <div class="submenu-wrapper">
                                 <div class="dropdown-item submenu-parent">
-                                    <a href="https://aaravtech.net/bpo-services.html" class="submenu-link ">BPO</a>
+                                    <a href="https://aaravtechsolutions.com/bpo-services.html" class="submenu-link ">BPO</a>
                                     <button class="submenu-toggle" type="button">
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                 </div>
                                 <div class="submenu ">
-                                    <a class="dropdown-item" href="https://aaravtech.net/back-office-support-services.html">Back Office Support</a>
-                                    <a class="dropdown-item" href="https://aaravtech.net/call-center-services.html">Call Centre Services</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/back-office-support-services.html">Back Office Support</a>
+                                    <a class="dropdown-item" href="https://aaravtechsolutions.com/call-center-services.html">Call Centre Services</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://aaravtech.net/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
-                    <a href="https://aaravtech.net/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
-                    <a href="https://aaravtech.net/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
+                    <a href="https://aaravtechsolutions.com/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
+                    <a href="https://aaravtechsolutions.com/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <a href="https://aaravtechsolutions.com/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
                 <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
             </div>
@@ -1211,7 +1211,7 @@ if ($result === false) {
                                     <?php endif; ?>
                                     <div class="blog-content">
                                         <p style="color:#c3c6d1;"><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
+                                        <a href="https://aaravtechsolutions.com/blogs/<?php echo $row['post_name']; ?>" class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
@@ -1241,14 +1241,14 @@ if ($result === false) {
                 <p>Ready to transform your digital presence? Let's discuss how our expertise can help your business
                     thrive in the digital landscape.</p>
                 <div class="hero-buttons">
-                    <a href="https://aaravtech.net/contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
+                    <a href="https://aaravtechsolutions.com/contact.html" class="btn-primary">Request a Quote <i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+        <footer>
         <div class="footer-shape">
         </div>
 
@@ -1269,48 +1269,42 @@ if ($result === false) {
                             <circle cx="25" cy="25" r="8" fill="none" stroke="white" stroke-width="2" />
                             <path d="M20,20 L30,30 M30,20 L20,30" stroke="white" stroke-width="2" />
                         </svg> -->
-                        <div class="footer-logo-text">AaravTechServices</div>
+                        <div class="footer-logo-text">Aarav Tech Solutions</div>
                     </div>
                     <p>We provide cutting-edge technology solutions to help businesses thrive in the digital age. Our
                         team of experts delivers innovative software and consulting services.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/AaravTechServicesLLP/" target="_blank"><i
+                        <a href="https://www.facebook.com/profile.php?id=61586074877291" target="_blank"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/aaravtech_services/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/aarav-tech-services/" target="_blank"><i
-                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/aarav.tech_solutions?igsh=MWp6ZDZ1eml1cDh1aQ=="
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="" target="_blank"><i class="fab fa-linkedin"></i></a> -->
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="https://aaravtech.net/about.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                        </li>
-                        <li><a href="https://aaravtech.net/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a>
-                        </li>
-                        <li><a href="https://aaravtech.net/career.php"><i class="fas fa-chevron-right"></i>Career</a>
-                        </li>
-                        <li><a href="https://aaravtech.net/contact.html"><i class="fas fa-chevron-right"></i>
-                                Contact</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="https://aaravtech.net/custom-website-development-services.html"><i
-                                    class="fas fa-chevron-right"></i> Web Development</a></li>
-                        <li><a href="https://aaravtech.net/web-and-mobile-app-development.html"><i
-                                    class="fas fa-chevron-right"></i> Mobile Apps</a></li>
-                        <li><a href="https://aaravtech.net/graphic-designing.html"><i
-                                    class="fas fa-chevron-right"></i>Graphic Designing</a></li>
-                        <li><a href="https://aaravtech.net/digital-marketing-services.html"><i class="fas fa-chevron-right"></i>
-                                Digital Marketing</a></li>
-                        <li><a href="https://aaravtech.net/ui-ux-design-services.html"><i
-                                    class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="https://aaravtech.net/bpo-services.html"><i class="fas fa-chevron-right"></i>BPO
-                                Services</a></li>
+                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                                Development</a></li>
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                                Apps</a></li>
+                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        </li>
+                        <li><a href="digital-marketing-services.html"><i class="fas fa-chevron-right"></i> Digital
+                                Marketing</a></li>
+                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        </li>
+                        <li><a href="bpo-services.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
 
@@ -1319,34 +1313,29 @@ if ($result === false) {
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Kanpur Nagar, Uttar Pradesh, India</span>
+                            <span>537 S Scott St Bainbridge Ga 39819</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>+91 7318083502</span>
+                            <span>+1 786 636 3682</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>contact@aaravtech.net</span>
+                            <span>info@aaravtechsolutions.com</span>
                         </li>
                     </ul>
 
-                    <h4 style="margin-top: 20px; margin-bottom: 10px;">Newsletter</h4>
-                    <p style="font-size: 0.9rem;">Subscribe to our newsletter for the latest updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p style="margin-bottom:0;">&copy; 2023 AaravTech. All Rights Reserved.</p>
+                <p style="margin-bottom:0;">&copy; 2026 Aarav Tech Solutions. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
-                    <a href="https://aaravtech.net/privacy-policy.html">Privacy Policy</a>
-                    <a href="https://aaravtech.net/terms-and-conditions.html">Terms of Service</a>
-                    <a href="https://aaravtech.net/sitemap.html">Sitemap</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms of Service</a>
+                    <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -1366,8 +1355,8 @@ if ($result === false) {
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="https://aaravtech.net/js/main.js"></script>
-    <script src="https://aaravtech.net/index.js"></script>
+    <script src="https://aaravtechsolutions.com/js/main.js"></script>
+    <script src="https://aaravtechsolutions.com/index.js"></script>
     <script>
         // Show/hide back to top button
         window.addEventListener('scroll', function() {

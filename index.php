@@ -783,7 +783,7 @@ if ($result === false) {
         style="padding: 100px 0; background: linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);">
         <div class="container">
             <div class="section-title" style="margin-bottom: 50px;">
-                <h2>Best Digital Marketing Agency in India for ROI-Driven Growth</h2>
+                <h2>Best Digital Marketing Agency in USA for ROI-Driven Growth</h2>
                 <p>Aarav Tech Solutions is a US-based leading digital marketing company that helps businesses to acquire
                     greater exposure, attract quality leads, and attain measurable growth. You have just arrived at the
                     right place if you want to hire a digital marketing agency that will perform, scale and generate
@@ -1544,7 +1544,7 @@ if ($result === false) {
                     <p><a href="tel:+917318083502"><i class="fa fa-phone"></i>+91 7318083502</a></p>
                     <p><a href="mailto:contact@aaravtech.net "><i class="fa fa-envelope"></i>contact@aaravtech.net </a>
                     </p>
-                    <p><a href=""><i class="fa fa-location-pin"></i>Kanpur Nagar, Uttar Pradesh, India</a></p>
+                    <p><a href=""><i class="fa fa-location-pin"></i>Kanpur Nagar, Uttar Pradesh, USA</a></p>
                 </div>
             </div>
         </div>
