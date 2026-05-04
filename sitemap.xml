@@ -1,190 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aaravtech.net/</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/about.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/seo-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/social-media-optimization.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/ppc-marketing-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/content-marketing-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/custom-website-development-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/ui-ux-design-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/web-and-mobile-app-development.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/logo-design-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/back-office-support-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/call-center-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs.php</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/career.php</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/contact.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/digital-marketing-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/web-development-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/bpo-services.html</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/hiring-digital-marketing-agency</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/digital-marketing-trends-for-2025</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/seo-mistakes-in-2025</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <url>
-    <loc>https://aaravtech.net/blogs/mastering-seo-in-2025</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/benefits-of-technical-seo-why-it-matters</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/pros-and-cons-of-social-media</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/website-hosting-charges-how-much-it-cost</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/web-and-mobile-app-development-in-2026</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/online-marketing-strategy-5-steps-to-success</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/llms-txt-file-for-seo-in-2026</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/custom-website-development-benefits-use-cases</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/new-google-march-2026-core-update-rollout</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://aaravtech.net/blogs/google-back-button-hijacking</loc>
-    <lastmod>2025-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
+
+<url>
+  <loc>https://aaravtechsolutions.com/</loc>
+  <lastmod>2026-04-29T23:31:27+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/about.html</loc>
+  <lastmod>2026-04-28T17:44:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/digital-marketing-services.html</loc>
+  <lastmod>2026-04-28T20:22:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/seo-services.html</loc>
+  <lastmod>2026-04-28T22:35:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/social-media-optimization.html</loc>
+  <lastmod>2026-04-29T00:01:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/ppc-marketing-services.html</loc>
+  <lastmod>2026-04-29T00:01:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/content-marketing-services.html</loc>
+  <lastmod>2026-04-29T00:01:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/web-development-services.html</loc>
+  <lastmod>2026-04-28T20:22:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/custom-website-development-services.html</loc>
+  <lastmod>2026-04-29T22:13:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/ui-ux-design-services.html</loc>
+  <lastmod>2026-04-29T22:13:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/web-and-mobile-app-development.html</loc>
+  <lastmod>2026-04-29T22:13:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/logo-design-services.html</loc>
+  <lastmod>2026-04-28T21:31:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/bpo-services.html</loc>
+  <lastmod>2026-04-28T21:31:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/back-office-support-services.html</loc>
+  <lastmod>2026-04-29T22:13:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/call-center-services.html</loc>
+  <lastmod>2026-04-29T22:13:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/blogs.php</loc>
+  <lastmod>2026-04-29T23:31:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/career.php</loc>
+  <lastmod>2026-04-29T23:31:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/contact.html</loc>
+  <lastmod>2026-04-29T22:13:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/privacy-policy.html</loc>
+  <lastmod>2026-04-29T22:56:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aaravtechsolutions.com/terms-and-conditions.html</loc>
+  <lastmod>2026-04-29T22:56:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>

@@ -1,13 +1,11 @@
 <?php
-// ✅ Enable debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// ✅ Connect to local XAMPP MySQL database
 $servername = "localhost";
 $username = "u868210921_OWGYP";
 $password = "pQTZ0sfkdM";
-$dbname = "u868210921_RXjAJ"; // ⚠️ Change this to your actual DB name
+$dbname = "u868210921_RXjAJ"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,7 +13,6 @@ if ($conn->connect_error) {
     die("❌ Connection failed: " . $conn->connect_error);
 }
 
-// Fetch published blog posts
 $sql = "SELECT ID, post_title, post_content, post_date, post_author,post_name
         FROM wp_posts
         WHERE post_type='post' AND post_status='publish'
@@ -25,19 +22,6 @@ $result = $conn->query($sql);
 if ($result === false) {
     die("❌ SQL Error: " . $conn->error);
 }
-
-// // Create an array to store data
-// $data = [];
-
-// if ($result && $result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $data[] = $row;
-//     }
-// }
-
-// // Convert to JSON
-// $jsonData = json_encode($data);
-
 ?>
 
 
@@ -1209,11 +1193,11 @@ if ($result === false) {
                         </div>
 
                         <div class="form-group">
-                            <textarea id="description" name="description placeholder=" Please type at least 20
+                            <textarea id="description" name="description" placeholder="Please type at least 20
                                 characters about your inquiry" minlength="20" required></textarea>
                         </div>
 
-                        <div class="g-recaptcha" data-sitekey="6Le2LtkrAAAAAAN7z1yULcq0sZF0IYAx8tiWK8HP"></div>
+                        <div class="g-recaptcha" data-sitekey="6LemgScsAAAAAL6NkWo8KlTeMTp6XL3VXdhovLPh"></div>
 
                         <button type="submit" class="submit-btn">Submit Now</button>
                     </form>
@@ -1225,7 +1209,7 @@ if ($result === false) {
 
 
 
-    <div class="blog-cta-container">
+    <!-- <div class="blog-cta-container">
         <section class="blog-section">
             <div class="container">
                 <div class="section-header">
@@ -1300,7 +1284,7 @@ if ($result === false) {
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 
     <!-- FAQ Section - Updated Design -->
     <section class="faq-section" id="faq">

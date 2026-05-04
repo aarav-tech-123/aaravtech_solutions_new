@@ -2,4 +2,4 @@ User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
 Disallow: /?p
-Sitemap: https://aaravtech.net/sitemap.xml
+Sitemap: https://aaravtechsolutions.com/sitemap.xml

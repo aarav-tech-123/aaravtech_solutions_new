@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST['message']);
 
     // 1. reCAPTCHA verification
-    $secretKey = "6Le2LtkrAAAAANO7FjghcMy7uzwxncWQ0yDJuBTs"; // <-- Replace with your real secret key
+    $secretKey = "6LemgScsAAAAAFvxtkzy04lUy5Bdq9ozyDmRxFYk"; // <-- Replace with your real secret key
     $responseKey = $_POST['g-recaptcha-response'] ?? '';
     $userIP = $_SERVER['REMOTE_ADDR'];
 
