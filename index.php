@@ -3,9 +3,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $servername = "localhost";
-$username = "u868210921_OWGYP";
-$password = "pQTZ0sfkdM";
-$dbname = "u868210921_RXjAJ"; 
+$username = "u868210921_k0wAE";
+$password = "#x>Df3_pL*";
+$dbname = "u868210921_ychXj"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -726,8 +726,8 @@ if ($result === false) {
                     </div>
                     <a href="https://aaravtechsolutions.com/blogs.php" class="nav-item nav-link "
                         style="color:var(--bs-white) !important">Blogs</a>
-                    <a href="https://aaravtechsolutions.com/career.php" class="nav-item nav-link"
-                        style="color:var(--bs-white) !important">Career</a>
+                    <!-- <a href="https://aaravtechsolutions.com/career.php" class="nav-item nav-link"
+                        style="color:var(--bs-white) !important">Career</a> -->
                     <a href="https://aaravtechsolutions.com/contact.html" class="nav-item nav-link"
                         style="color:var(--bs-white) !important">Contact</a>
                 </div>
@@ -851,9 +851,9 @@ if ($result === false) {
     <div class="media-section container" style="margin-bottom:4rem;">
         <div class="row mt-5">
             <div class="col-md-6">
-                <h1 style="font-weight: 500; color: white;">Why Aarav Tech Solutions Is the <span class="gradient-text"
+                <h2 style="font-weight: 500; color: white;">Why Aarav Tech Solutions Is the <span class="gradient-text"
                         style="font-weight: 600;">Best Digital Marketing Agency</span> in USA
-                </h1>
+                </h2>
                 <p style="text-align: left; font-size: 18px; color: rgba(246, 246, 250, 0.8);">
                     The decision to choose the right marketing partner will change your business. As one of the leading
                     digital marketing firms in USA, we do not run campaigns but we develop growth systems.
@@ -1117,9 +1117,9 @@ if ($result === false) {
     <section class="cta-section">
         <div class="cta-overlay"></div>
         <div class="cta-content">
-            <h1>Let’s Grow Your <span class="highlight">Business</span> with Top <span class="highlight-alt">Digital
+            <h2>Let’s Grow Your <span class="highlight">Business</span> with Top <span class="highlight-alt">Digital
                     Marketing</span> Services
-            </h1>
+            </h2>
             <p>
                 When you are willing to grow your business, generate more leads and dominate your market, partner with
                 Aarav Tech Solutions, the best digital marketing agency in USA.
@@ -1209,7 +1209,7 @@ if ($result === false) {
 
 
 
-    <!-- <div class="blog-cta-container">
+    <div class="blog-cta-container">
         <section class="blog-section">
             <div class="container">
                 <div class="section-header">
@@ -1284,7 +1284,7 @@ if ($result === false) {
                 </div>
             </div>
         </section>
-    </div> -->
+    </div>
 
     <!-- FAQ Section - Updated Design -->
     <section class="faq-section" id="faq">
@@ -1578,7 +1578,7 @@ if ($result === false) {
                         <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
-                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <!-- <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li> -->
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -1587,7 +1587,7 @@ if ($result === false) {
                     <ul class="footer-links">
                         <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
                                 Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Web/Mobile
                                 Apps</a></li>
                         <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
                         </li>

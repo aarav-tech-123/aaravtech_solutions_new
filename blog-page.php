@@ -5,9 +5,9 @@
 // --------------------
 // ✅ Connect to local XAMPP MySQL database
 $servername = "localhost";
-$username = "u868210921_OWGYP";
-$password = "pQTZ0sfkdM";
-$dbname = "u868210921_RXjAJ";  // your DB name
+$username = "u868210921_k0wAE";
+$password = "#x>Df3_pL*";
+$dbname = "u868210921_ychXj"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -1109,7 +1109,7 @@ if ($result === false) {
                         </div>
                     </div>
                     <a href="https://aaravtechsolutions.com/blogs.php" class="nav-item nav-link " style="color:var(--bs-white) !important">Blogs</a>
-                    <a href="https://aaravtechsolutions.com/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a>
+                    <!-- <a href="https://aaravtechsolutions.com/career.php" class="nav-item nav-link" style="color:var(--bs-white) !important">Career</a> -->
                     <a href="https://aaravtechsolutions.com/contact.html" class="nav-item nav-link" style="color:var(--bs-white) !important">Contact</a>
                 </div>
                 <a href="tel:" class="glass-btn nav-link-btn" style="margin-right: 2rem; font-size: .8rem; padding:.8rem 1.6rem; width:fit-content;">Let's Talk</a>
@@ -1287,7 +1287,7 @@ if ($result === false) {
                         <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                         <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
-                        <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li>
+                        <!-- <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li> -->
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -1296,7 +1296,7 @@ if ($result === false) {
                     <ul class="footer-links">
                         <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
                                 Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Mobile
+                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Web/Mobile
                                 Apps</a></li>
                         <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
                         </li>
