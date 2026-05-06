@@ -803,59 +803,95 @@
         </div>
     </div>
 
-    <!-- FAQ Section -->
-    <section style="padding: 100px 0;">
+    <section class="faq-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 70px;">
-                <h2 style="color: #ffff;">Frequently Asked <span style="background: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Questions</span></h2>
-                <p style="color: rgba(246, 246, 250, 0.7);">Everything you need to know about our web development services</p>
+            <div class="section-title">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Everything you need to know about our web development services</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 30px;">
-                <div style="background: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="font-size: 20px; font-weight: 600; color: #ffff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-question-circle" style="color: #8A2BE2; font-size: 24px;"></i>
-                        <span>1. Why is professional web development important for business growth?</span>
-                    </div>
-                    <div style="color: rgba(246, 246, 250, 0.7); line-height: 1.7; padding-left: 36px;">
-                        Professional site gives credibility, enhanced user experience, visibility in the internet and converts traffic to customers with enhanced design, speed and performance.
-                    </div>
-                </div>
-                <div style="background: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="font-size: 20px; font-weight: 600; color: #ffff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-question-circle" style="color: #8A2BE2; font-size: 24px;"></i>
-                        <span>2. Do you offer custom website solutions for different industries?</span>
-                    </div>
-                    <div style="color: rgba(246, 246, 250, 0.7); line-height: 1.7; padding-left: 36px;">
-                        Yes, we design customized websites to startups, local businesses, e-commerce brands, and enterprises depending on the targeted goals, audience needs, and the functionality requirements
-                    </div>
-                </div>
-                <div style="background: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="font-size: 20px; font-weight: 600; color: #ffff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-question-circle" style="color: #8A2BE2; font-size: 24px;"></i>
-                        <span>3. How long does it take to build a business website?</span>
-                    </div>
-                    <div style="color: rgba(246, 246, 250, 0.7); line-height: 1.7; padding-left: 36px;">
-                        Our project timelines are mostly dependent on the features and complexity that we use in our website. The majority of typical business websites have a completion period of 2 to 6 weeks once final approvals are made.
+
+            <div class="accordion custom-accordion" id="faqAccordionLogoDesign">
+
+                <!-- FAQ 1 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="logoFaqHeading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#logoFaqCollapse1" aria-expanded="true" aria-controls="logoFaqCollapse1">
+                            Why is professional web development important for business growth?
+                        </button>
+                    </h2>
+                    <div id="logoFaqCollapse1" class="accordion-collapse collapse show"
+                        aria-labelledby="logoFaqHeading1" data-bs-parent="#faqAccordionLogoDesign">
+                        <div class="accordion-body faq-accordion-body">
+                            Professional site gives credibility, enhanced user experience, visibility in the internet and converts traffic to customers with enhanced design, speed and performance.
+                        </div>
                     </div>
                 </div>
-                <div style="background: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="font-size: 20px; font-weight: 600; color: #ffff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-question-circle" style="color: #8A2BE2; font-size: 24px;"></i>
-                        <span>4. Do you provide ecommerce website design services for online stores?</span>
-                    </div>
-                    <div style="color: rgba(246, 246, 250, 0.7); line-height: 1.7; padding-left: 36px;">
-                        Yes, we build safe online stores with integrated payment systems, mobile-friendly designs, product management solutions and conversion-oriented shopping experiences that can achieve a higher sales performance.
-                    </div>
-                </div>
-                <div style="background: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%); border-radius: 20px; padding: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="font-size: 20px; font-weight: 600; color: #ffff; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-question-circle" style="color: #8A2BE2; font-size: 24px;"></i>
-                        <span>5. Do you provide website maintenance after launch?</span>
-                    </div>
-                    <div style="color: rgba(246, 246, 250, 0.7); line-height: 1.7; padding-left: 36px;">
-                        Yes, we do provide routine maintenance services such as updates, backups, bug fixes, security checks, and support services to ensure that your site is running smoothly.
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="logoFaqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#logoFaqCollapse2" aria-expanded="false" aria-controls="logoFaqCollapse2">
+                            Do you offer custom website solutions for different industries?
+                        </button>
+                    </h2>
+                    <div id="logoFaqCollapse2" class="accordion-collapse collapse"
+                        aria-labelledby="logoFaqHeading2" data-bs-parent="#faqAccordionLogoDesign">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes, we design customized websites to startups, local businesses, e-commerce brands, and enterprises depending on the targeted goals, audience needs, and the functionality requirements
+                        </div>
                     </div>
                 </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="logoFaqHeading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#logoFaqCollapse3" aria-expanded="false" aria-controls="logoFaqCollapse3">
+                            How long does it take to build a business website?
+                        </button>
+                    </h2>
+                    <div id="logoFaqCollapse3" class="accordion-collapse collapse"
+                        aria-labelledby="logoFaqHeading3" data-bs-parent="#faqAccordionLogoDesign">
+                        <div class="accordion-body faq-accordion-body">
+                            Our project timelines are mostly dependent on the features and complexity that we use in our website. The majority of typical business websites have a completion period of 2 to 6 weeks once final approvals are made.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="logoFaqHeading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#logoFaqCollapse4" aria-expanded="false" aria-controls="logoFaqCollapse4">
+                            Do you provide ecommerce website design services for online stores?
+                        </button>
+                    </h2>
+                    <div id="logoFaqCollapse4" class="accordion-collapse collapse"
+                        aria-labelledby="logoFaqHeading4" data-bs-parent="#faqAccordionLogoDesign">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes, we build safe online stores with integrated payment systems, mobile-friendly designs, product management solutions and conversion-oriented shopping experiences that can achieve a higher sales performance.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="accordion-item glow-effect">
+                    <h2 class="accordion-header" id="logoFaqHeading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#logoFaqCollapse5" aria-expanded="false" aria-controls="logoFaqCollapse5">
+                            Do you provide website maintenance after launch?
+                        </button>
+                    </h2>
+                    <div id="logoFaqCollapse5" class="accordion-collapse collapse"
+                        aria-labelledby="logoFaqHeading5" data-bs-parent="#faqAccordionLogoDesign">
+                        <div class="accordion-body faq-accordion-body">
+                            Yes, we do provide routine maintenance services such as updates, backups, bug fixes, security checks, and support services to ensure that your site is running smoothly.
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
