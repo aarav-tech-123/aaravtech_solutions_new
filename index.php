@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "u868210921_k0wAE";
 $password = "#x>Df3_pL*";
-$dbname = "u868210921_ychXj"; 
+$dbname = "u868210921_ychXj";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -86,545 +86,545 @@ if ($result === false) {
 
     <!-- Google Tag Manager -->
     <script>
-    (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PBP85WB6');
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PBP85WB6');
     </script>
     <!-- End Google Tag Manager -->
 
 
     <style>
-    :root {
-        --bs-bg-dark: #0B011C;
-        --bs-light: #F6F6FA;
-        --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
-        --accent: #8A2BE2;
-        --accent-light: #9D4EDD;
-        --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
-        --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
-        --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
-        --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
-        --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
-    }
-
-    body {
-        background: var(--gradient-bg);
-        color: var(--bs-light);
-        line-height: 1.6;
-        overflow-x: hidden;
-        min-height: 100vh;
-    }
-
-    .header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        /* dark overlay for readability */
-        z-index: 0;
-    }
-
-    .hero-section,
-    .navbar,
-    .stats-section {
-        position: relative;
-        z-index: 1;
-    }
-
-    .navbar-container.scrolled {
-        background: #00000065;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        transform: translateY(0);
-    }
-
-    /* Why Hire Us Section with Left Gradient Cards */
-    .why-hire-us {
-        padding: 120px 0;
-        position: relative;
-        background:
-            radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
-            var(--gradient-bg);
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 70px;
-    }
-
-    .section-title h2 {
-        font-size: 48px;
-        color: var(--bs-light);
-        margin-bottom: 16px;
-        font-weight: 700;
-    }
-
-    .section-title h2 .gradient-text {
-        background: var(--gradient-text);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% auto;
-        animation: textShine 3s linear infinite;
-    }
-
-    .section-title p {
-        color: rgba(246, 246, 250, 0.7);
-
-        margin: 0 auto;
-        font-size: 18px;
-        font-weight: 400;
-    }
-
-    /* NEW: Left Gradient Cards Design */
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    /* Common Card Styles - Gradient Expand Animation from LEFT for ALL cards */
-    .card {
-        display: block;
-        position: relative;
-        background: var(--gradient-card);
-        border-radius: 16px;
-        padding: 40px 30px;
-        text-decoration: none;
-        z-index: 0;
-        overflow: hidden;
-        border: 1px solid rgba(138, 43, 226, 0.2);
-        backdrop-filter: blur(10px);
-        transition: all 1s ease;
-        height: 100%;
-    }
-
-    /* Left Corner Indicator */
-    .left-corner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        background: var(--gradient-primary);
-        border-radius: 0 0 40px 0;
-        z-index: 3;
-    }
-
-    /* Gradient Expand Animation from LEFT for ALL cards */
-    .card::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: -20px;
-        left: -20px;
-        background: var(--gradient-primary);
-        height: 40px;
-        width: 40px;
-        border-radius: 40px;
-        transform: scale(1);
-        transform-origin: 50% 50%;
-        transition: transform 1s ease;
-        opacity: 0;
-    }
-
-    /* Card hover effect - gradient fills entire card from LEFT */
-    .card:hover::before {
-        transform: scale(35);
-        opacity: 1;
-    }
-
-    .card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow:
-            0 25px 50px rgba(138, 43, 226, 0.3),
-            0 0 60px rgba(138, 43, 226, 0.2);
-        border-color: transparent;
-    }
-
-    .card h3 {
-        font-size: 24px;
-        margin-bottom: 16px;
-        color: var(--bs-light);
-        font-weight: 600;
-        position: relative;
-        z-index: 2;
-        transition: all 0.4s ease-out;
-    }
-
-    .card p {
-        color: rgba(246, 246, 250, 0.8);
-        font-size: 16px;
-        line-height: 1.7;
-        position: relative;
-        z-index: 2;
-        transition: all 0.4s ease-out;
-    }
-
-    .card:hover h3 {
-        color: #ffffff;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .card:hover p {
-        color: rgba(255, 255, 255, 0.95);
-    }
-
-    .card:hover .left-corner {
-        background: transparent;
-        transform: scale(1.1);
-    }
-
-    /* Individual card variations (subtle gradient differences) */
-    .card1::before {
-        top: -20px;
-        left: -20px;
-        background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
-    }
-
-
-
-    /* Card Icons */
-    .card-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 25px;
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, rgba(106, 13, 173, 0.1) 100%);
-        border: 1px solid rgba(138, 43, 226, 0.2);
-        color: var(--accent);
-        font-size: 24px;
-        position: relative;
-        z-index: 2;
-        transition: all 0.3s;
-    }
-
-    .card:hover .card-icon {
-        background: rgba(255, 255, 255, 0.2);
-        color: #ffffff;
-        transform: scale(1.1);
-    }
-
-
-    /* Appointment Section */
-    .appointment-section {
-        padding: 100px 0;
-        position: relative;
-        background:
-            radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
-            linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
-    }
-
-    .appointment-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-    }
-
-    @media (max-width: 992px) {
-        .appointment-container {
-            grid-template-columns: 1fr;
+        :root {
+            --bs-bg-dark: #0B011C;
+            --bs-light: #F6F6FA;
+            --gradient-bg: linear-gradient(180deg, #05000D 0%, #0B011C 20%, #14072D 45%, #1E0E45 70%, #2C1C6E 100%);
+            --accent: #8A2BE2;
+            --accent-light: #9D4EDD;
+            --gradient-primary: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+            --gradient-secondary: linear-gradient(135deg, #1E0E45 0%, #2C1C6E 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30, 14, 69, 0.8) 0%, rgba(43, 28, 110, 0.6) 100%);
+            --gradient-text: linear-gradient(90deg, #8A2BE2, #9D4EDD, #B66DF0);
+            --gradient-pricing: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(30, 14, 69, 0.2) 100%);
         }
-    }
 
-    .appointment-content {
-        align-self: self-start;
-    }
+        body {
+            background: var(--gradient-bg);
+            color: var(--bs-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-    .appointment-content h2 {
-        font-size: 42px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        line-height: 1.2;
-        color: var(--bs-white);
-    }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* dark overlay for readability */
+            z-index: 0;
+        }
 
-    .appointment-content p {
-        font-size: 18px;
-        margin-bottom: 30px;
-        color: rgba(246, 246, 250, 0.8);
-        line-height: 1.7;
-    }
+        .hero-section,
+        .navbar,
+        .stats-section {
+            position: relative;
+            z-index: 1;
+        }
 
-    .trust-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 40px;
-    }
+        .navbar-container.scrolled {
+            background: #00000065;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(0);
+        }
 
-    .trust-badge {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 20px;
-        background: rgba(30, 14, 69, 0.5);
-        border-radius: 10px;
-        border: 1px solid rgba(138, 43, 226, 0.2);
-    }
+        /* Why Hire Us Section with Left Gradient Cards */
+        .why-hire-us {
+            padding: 120px 0;
+            position: relative;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                var(--gradient-bg);
+        }
 
-    .trust-badge .stars {
-        color: #FFD700;
-    }
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
 
-    .trust-badge span {
-        font-weight: 600;
-        color: var(--bs-light);
-    }
+        .section-title h2 {
+            font-size: 48px;
+            color: var(--bs-light);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
 
-    .appointment-form {
-        background: var(--gradient-card);
-        border-radius: 20px;
-        padding: 40px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-    }
+        .section-title h2 .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
+        }
 
-    .form-title {
-        font-size: 28px;
-        margin-bottom: 10px;
-        font-weight: 700;
-        color: var(--bs-light);
-    }
+        .section-title p {
+            color: rgba(246, 246, 250, 0.7);
 
-    .form-subtitle {
-        color: rgba(246, 246, 250, 0.7);
-        margin-bottom: 30px;
-        font-size: 16px;
-    }
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 400;
+        }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+        /* NEW: Left Gradient Cards Design */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+        /* Common Card Styles - Gradient Expand Animation from LEFT for ALL cards */
+        .card {
+            display: block;
+            position: relative;
+            background: var(--gradient-card);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 1s ease;
+            height: 100%;
+        }
 
-    input,
-    select,
-    textarea {
-        width: 100%;
-        padding: 16px 20px !important;
-        background: rgba(11, 1, 28, 0.6) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 10px;
-        color: var(--bs-light);
-        font-size: 16px;
-        transition: all 0.3s;
-    }
+        /* Left Corner Indicator */
+        .left-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            background: var(--gradient-primary);
+            border-radius: 0 0 40px 0;
+            z-index: 3;
+        }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-        outline: none;
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
-    }
+        /* Gradient Expand Animation from LEFT for ALL cards */
+        .card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -20px;
+            left: -20px;
+            background: var(--gradient-primary);
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 1s ease;
+            opacity: 0;
+        }
 
-    input::placeholder,
-    textarea::placeholder {
-        color: rgba(246, 246, 250, 0.5);
-    }
+        /* Card hover effect - gradient fills entire card from LEFT */
+        .card:hover::before {
+            transform: scale(35);
+            opacity: 1;
+        }
 
-    select {
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23F6F6FA' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 20px center;
-        background-size: 16px;
-    }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                0 25px 50px rgba(138, 43, 226, 0.3),
+                0 0 60px rgba(138, 43, 226, 0.2);
+            border-color: transparent;
+        }
 
-    textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--bs-light);
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease-out;
+        }
 
-    .captcha {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 15px;
-        background: rgba(11, 1, 28, 0.4);
-        border-radius: 10px;
-        margin-bottom: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .card p {
+            color: rgba(246, 246, 250, 0.8);
+            font-size: 16px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease-out;
+        }
 
-    .captcha-checkbox {
-        width: 20px;
-        height: 20px;
-        accent-color: var(--accent);
-    }
+        .card:hover h3 {
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-    .captcha-label {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        color: rgba(246, 246, 250, 0.8);
-    }
+        .card:hover p {
+            color: rgba(255, 255, 255, 0.95);
+        }
 
-    .captcha-icon {
-        color: #4285F4;
-        font-size: 18px;
-    }
+        .card:hover .left-corner {
+            background: transparent;
+            transform: scale(1.1);
+        }
 
-    .submit-btn {
-        background: var(--gradient-primary);
-        color: white;
-        border: none;
-        width: 100%;
-        /* padding: 18px; */
-        border-radius: 10px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s;
-        font-size: 16px;
-        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
+        /* Individual card variations (subtle gradient differences) */
+        .card1::before {
+            top: -20px;
+            left: -20px;
+            background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+        }
 
-    .submit-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-    }
 
-    .submit-btn:hover::before {
-        left: 100%;
-    }
 
-    .submit-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
-    }
+        /* Card Icons */
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, rgba(106, 13, 173, 0.1) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            color: var(--accent);
+            font-size: 24px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
 
-    /* FAQ Section - Updated Design */
-    .faq-section {
-        padding: 100px 0;
-        background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
-    }
+        .card:hover .card-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transform: scale(1.1);
+        }
 
-    .accordion.custom-accordion {
-        border-radius: 15px;
-        overflow: hidden;
-    }
 
-    .accordion.custom-accordion .accordion-item {
-        background: var(--gradient-card);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 15px;
-        border-radius: 15px;
-        overflow: hidden;
-    }
+        /* Appointment Section */
+        .appointment-section {
+            padding: 100px 0;
+            position: relative;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(30, 14, 69, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(11, 1, 28, 0.9) 0%, rgba(30, 14, 69, 0.7) 100%);
+        }
 
-    .accordion.custom-accordion .accordion-button {
-        background: var(--gradient-pricing);
-        color: var(--bs-light);
-        font-weight: 600;
-        font-size: 18px;
-        padding: 20px 25px;
-        border: none;
-        width: 100%;
-        text-align: left;
-        cursor: pointer;
-        transition: all 0.3s;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: none !important;
-    }
+        .appointment-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
 
-    .accordion.custom-accordion .accordion-button:hover {
-        background: rgba(138, 43, 226, 0.1);
-    }
+        @media (max-width: 992px) {
+            .appointment-container {
+                grid-template-columns: 1fr;
+            }
+        }
 
-    .accordion.custom-accordion .accordion-button:not(.collapsed) {
-        background: rgba(138, 43, 226, 0.15);
-        color: var(--bs-light);
-        box-shadow: none;
-    }
+        .appointment-content {
+            align-self: self-start;
+        }
 
-    .accordion.custom-accordion .accordion-button::after {
-        content: '+';
-        font-size: 24px;
-        transition: transform 0.3s;
-        background-image: none !important;
-        width: auto;
-        height: auto;
-        transform: none;
-    }
+        .appointment-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--bs-white);
+        }
 
-    .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
-        content: '-';
-        transform: none;
-    }
+        .appointment-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: rgba(246, 246, 250, 0.8);
+            line-height: 1.7;
+        }
 
-    .accordion.custom-accordion .accordion-body {
-        padding: 0;
-        background: rgba(11, 1, 28, 0.5);
-    }
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
 
-    .faq-accordion-body {
-        padding: 1rem .5rem !important;
-        color: rgba(246, 246, 250, 0.8);
-        line-height: 1.7;
-    }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(30, 14, 69, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
 
-    .glow-effect {
-        position: relative;
-    }
+        .trust-badge .stars {
+            color: #FFD700;
+        }
 
-    .glow-effect::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(106, 13, 173, 0.1) 100%);
-        border-radius: 15px;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+        .trust-badge span {
+            font-weight: 600;
+            color: var(--bs-light);
+        }
 
-    .glow-effect:hover::before {
-        opacity: 1;
-    }
+        .appointment-form {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--bs-light);
+        }
+
+        .form-subtitle {
+            color: rgba(246, 246, 250, 0.7);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 16px 20px !important;
+            background: rgba(11, 1, 28, 0.6) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 10px;
+            color: var(--bs-light);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(246, 246, 250, 0.5);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23F6F6FA' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 16px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(11, 1, 28, 0.4);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .captcha-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+        }
+
+        .captcha-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: rgba(246, 246, 250, 0.8);
+        }
+
+        .captcha-icon {
+            color: #4285F4;
+            font-size: 18px;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            width: 100%;
+            /* padding: 18px; */
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* FAQ Section - Updated Design */
+        .faq-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(11, 1, 28, 0.8) 0%, rgba(30, 14, 69, 0.6) 100%);
+        }
+
+        .accordion.custom-accordion {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion.custom-accordion .accordion-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion.custom-accordion .accordion-button {
+            background: var(--gradient-pricing);
+            color: var(--bs-light);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 20px 25px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: none !important;
+        }
+
+        .accordion.custom-accordion .accordion-button:hover {
+            background: rgba(138, 43, 226, 0.1);
+        }
+
+        .accordion.custom-accordion .accordion-button:not(.collapsed) {
+            background: rgba(138, 43, 226, 0.15);
+            color: var(--bs-light);
+            box-shadow: none;
+        }
+
+        .accordion.custom-accordion .accordion-button::after {
+            content: '+';
+            font-size: 24px;
+            transition: transform 0.3s;
+            background-image: none !important;
+            width: auto;
+            height: auto;
+            transform: none;
+        }
+
+        .accordion.custom-accordion .accordion-button:not(.collapsed)::after {
+            content: '-';
+            transform: none;
+        }
+
+        .accordion.custom-accordion .accordion-body {
+            padding: 0;
+            background: rgba(11, 1, 28, 0.5);
+        }
+
+        .faq-accordion-body {
+            padding: 1rem .5rem !important;
+            color: rgba(246, 246, 250, 0.8);
+            line-height: 1.7;
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(106, 13, 173, 0.1) 100%);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -1224,8 +1224,8 @@ if ($result === false) {
 
                     <div class="blog-slider">
                         <?php if ($result->num_rows > 0): ?>
-                        <?php while ($row = $result->fetch_assoc()): ?>
-                        <?php
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <?php
                                 $author_id = $row['post_author'];
                                 $author_result = $conn->query("SELECT display_name FROM wp_users WHERE ID = $author_id");
                                 $author = ($author_result && $author_result->num_rows > 0)
@@ -1248,31 +1248,31 @@ if ($result === false) {
                                         : '';
                                 }
                                 ?>
-                        <div class="blog-card">
-                            <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
-                            <?php if ($img_url): ?>
-                            <div class="blog-image">
-                                <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
-                                <div class="overlay"></div>
-                            </div>
-                            <?php else: ?>
-                            <div class="blog-image">
-                                <img src="img/about_us.png" alt="Blog 1" />
-                                <div class="overlay"></div>
-                            </div>
-                            <?php endif; ?>
-                            <div class="blog-content">
-                                <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>"
-                                    class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <?php endwhile; ?>
+                                <div class="blog-card">
+                                    <h3 class="blog-title"><?php echo htmlspecialchars($row['post_title']) ?></h3>
+                                    <?php if ($img_url): ?>
+                                        <div class="blog-image">
+                                            <img src="<?php echo htmlspecialchars($img_url) ?>" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="blog-image">
+                                            <img src="img/about_us.png" alt="Blog 1" />
+                                            <div class="overlay"></div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-content">
+                                        <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
+                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>"
+                                            class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
                         <?php else: ?>
-                        <div class="col-12 text-center">
-                            <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon
-                                for new articles!</p>
-                        </div>
+                            <div class="col-12 text-center">
+                                <p style="color: rgba(246, 246, 250, 0.7); font-size: 18px;">No blogs found. Check back soon
+                                    for new articles!</p>
+                            </div>
                         <?php endif; ?>
 
 
@@ -1650,153 +1650,153 @@ if ($result === false) {
     <!-- Template JavaScript -->
     <script src="js/main.js"></script>
     <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
 
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
 
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
 
-    const slider = document.querySelector(".blog-slider");
-    const leftBtn = document.querySelector(".slider-btn.left");
-    const rightBtn = document.querySelector(".slider-btn.right");
+        const slider = document.querySelector(".blog-slider");
+        const leftBtn = document.querySelector(".slider-btn.left");
+        const rightBtn = document.querySelector(".slider-btn.right");
 
-    let scrollAmount = 0;
-    const cardWidth = 380; // approximate width + gap
+        let scrollAmount = 0;
+        const cardWidth = 380; // approximate width + gap
 
-    rightBtn.addEventListener("click", () => {
-        slider.scrollBy({
-            left: cardWidth,
-            behavior: "smooth"
+        rightBtn.addEventListener("click", () => {
+            slider.scrollBy({
+                left: cardWidth,
+                behavior: "smooth"
+            });
         });
-    });
 
-    leftBtn.addEventListener("click", () => {
-        slider.scrollBy({
-            left: -cardWidth,
-            behavior: "smooth"
+        leftBtn.addEventListener("click", () => {
+            slider.scrollBy({
+                left: -cardWidth,
+                behavior: "smooth"
+            });
         });
-    });
 
-    // Optional: auto-slide every few seconds
-    setInterval(() => {
-        slider.scrollBy({
-            left: cardWidth,
-            behavior: "smooth"
-        });
-    }, 5000);
-
+        // Optional: auto-slide every few seconds
+        setInterval(() => {
+            slider.scrollBy({
+                left: cardWidth,
+                behavior: "smooth"
+            });
+        }, 5000);
 
 
-    // Update slidesToShow on window resize
+
+        // Update slidesToShow on window resize
 
 
-    // const cards = document.querySelectorAll('.testimonial-card');
-    // const prevBtn = document.querySelector('.nav-btn.left_test');
-    // const nextBtn = document.querySelector('.nav-btn.right_test');
+        // const cards = document.querySelectorAll('.testimonial-card');
+        // const prevBtn = document.querySelector('.nav-btn.left_test');
+        // const nextBtn = document.querySelector('.nav-btn.right_test');
 
-    // let current_card = 0;
+        // let current_card = 0;
 
-    // function updateCards() {
-    //     cards.forEach((card, index) => {
-    //         card.classList.remove('active', 'prev', 'next');
+        // function updateCards() {
+        //     cards.forEach((card, index) => {
+        //         card.classList.remove('active', 'prev', 'next');
 
-    //         if (index === current_card) {
-    //             card.classList.add('active');
-    //         } else if (index === (current_card - 1 + cards.length) % cards.length) {
-    //             card.classList.add('prev');
-    //         } else if (index === (current_card + 1) % cards.length) {
-    //             card.classList.add('next');
-    //         }
-    //     });
-    // }
-
-    // prevBtn.addEventListener('click', () => {
-    //     current_card = (current_card - 1 + cards.length) % cards.length;
-    //     updateCards();
-    // });
-
-    // nextBtn.addEventListener('click', () => {
-    //     current_card = (current_card + 1) % cards.length;
-    //     updateCards();
-    // });
-
-    // updateCards(); // initialize
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar-container');
-        const hero = document.querySelector('#hero-container');
-
-        const scrolled = window.scrollY > 100;
-
-        // Only update classes if state changes
-        navbar.classList.toggle('home-nav-scrolled', scrolled);
-        hero.classList.toggle('hero-scrolled', scrolled);
-        const navLinkBtns = document.querySelectorAll('.nav-link-btn');
-        const navLinks = document.querySelectorAll('.nav-link')
-
-        const img = document.getElementById('toggleImg');
-
-        // if(scrolled){
-        //     img.src =  'img/company_logo_primary.svg' ;
-        //     navLinkBtns.forEach(item => {
-        //         item.classList.add('btn', true);
-        //         item.classList.add('btn-primary', true);
-        //         item.classList.add('rounded-pill', true);
-        //         item.classList.remove('glass-btn', true);
+        //         if (index === current_card) {
+        //             card.classList.add('active');
+        //         } else if (index === (current_card - 1 + cards.length) % cards.length) {
+        //             card.classList.add('prev');
+        //         } else if (index === (current_card + 1) % cards.length) {
+        //             card.classList.add('next');
+        //         }
         //     });
-        //     navLinks.forEach(item => {
-        //         item.classList.remove('nav-link-white')
-        //     })
-
-        // } else {
-        //     img.src =  'img/company_logo_white.svg' ;
-        //     navLinkBtns.forEach(item => {
-        //         item.classList.remove('btn', true);
-        //         item.classList.remove('btn-primary', true);
-        //         item.classList.remove('rounded-pill', true);
-        //         item.classList.add('glass-btn', true);
-        //     });
-        //     navLinks.forEach(item => {
-        //         item.classList.add('nav-link-white')
-        //     })
         // }
 
-    });
+        // prevBtn.addEventListener('click', () => {
+        //     current_card = (current_card - 1 + cards.length) % cards.length;
+        //     updateCards();
+        // });
+
+        // nextBtn.addEventListener('click', () => {
+        //     current_card = (current_card + 1) % cards.length;
+        //     updateCards();
+        // });
+
+        // updateCards(); // initialize
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar-container');
+            const hero = document.querySelector('#hero-container');
+
+            const scrolled = window.scrollY > 100;
+
+            // Only update classes if state changes
+            navbar.classList.toggle('home-nav-scrolled', scrolled);
+            hero.classList.toggle('hero-scrolled', scrolled);
+            const navLinkBtns = document.querySelectorAll('.nav-link-btn');
+            const navLinks = document.querySelectorAll('.nav-link')
+
+            const img = document.getElementById('toggleImg');
+
+            // if(scrolled){
+            //     img.src =  'img/company_logo_primary.svg' ;
+            //     navLinkBtns.forEach(item => {
+            //         item.classList.add('btn', true);
+            //         item.classList.add('btn-primary', true);
+            //         item.classList.add('rounded-pill', true);
+            //         item.classList.remove('glass-btn', true);
+            //     });
+            //     navLinks.forEach(item => {
+            //         item.classList.remove('nav-link-white')
+            //     })
+
+            // } else {
+            //     img.src =  'img/company_logo_white.svg' ;
+            //     navLinkBtns.forEach(item => {
+            //         item.classList.remove('btn', true);
+            //         item.classList.remove('btn-primary', true);
+            //         item.classList.remove('rounded-pill', true);
+            //         item.classList.add('glass-btn', true);
+            //     });
+            //     navLinks.forEach(item => {
+            //         item.classList.add('nav-link-white')
+            //     })
+            // }
+
+        });
 
 
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    // document.querySelectorAll('.submenu-parent').forEach(item => {
-    //     console.log("query selector working");
-    //     item.addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     console.log("clicked")
-    //     const submenu = this.nextElementSibling;
-    //     if (!submenu) return;
-    //     submenu.classList.toggle('show');
-    //     submenu.classList.toggle('mobile');
+        // document.addEventListener('DOMContentLoaded', function() {
+        // document.querySelectorAll('.submenu-parent').forEach(item => {
+        //     console.log("query selector working");
+        //     item.addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     console.log("clicked")
+        //     const submenu = this.nextElementSibling;
+        //     if (!submenu) return;
+        //     submenu.classList.toggle('show');
+        //     submenu.classList.toggle('mobile');
 
-    //     // Close other submenus
-    //     document.querySelectorAll('.submenu.show').forEach(openSubmenu => {
-    //         if (openSubmenu !== submenu) {
-    //         openSubmenu.classList.remove('show');
-    //         openSubmenu.classList.remove('mobile');
-    //         }
-    //     });
-    //     });
-    // });
-    // });
+        //     // Close other submenus
+        //     document.querySelectorAll('.submenu.show').forEach(openSubmenu => {
+        //         if (openSubmenu !== submenu) {
+        //         openSubmenu.classList.remove('show');
+        //         openSubmenu.classList.remove('mobile');
+        //         }
+        //     });
+        //     });
+        // });
+        // });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="./index.js"></script>
