@@ -1117,7 +1117,7 @@ if ($result === false) {
     <section class="cta-section">
         <div class="cta-overlay"></div>
         <div class="cta-content">
-            <h2>Let’s Grow Your <span class="highlight">Business</span> with Top <span class="highlight-alt">Digital
+            <h2 style="color: #ffff;">Let’s Grow Your <span class="highlight">Business</span> with Top <span class="highlight-alt">Digital
                     Marketing</span> Services
             </h2>
             <p>
