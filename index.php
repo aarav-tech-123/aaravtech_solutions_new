@@ -1263,7 +1263,7 @@ if ($result === false) {
                                     <?php endif; ?>
                                     <div class="blog-content">
                                         <p><?php echo substr(strip_tags($row['post_content']), 0, 120); ?>...</p>
-                                        <a href="https://aaravtech.net/blogs/<?php echo $row['post_name']; ?>"
+                                        <a href="https://aaravtechsolutions.com/blogs/<?php echo $row['post_name']; ?>"
                                             class="read-more">Read More<i class="fa fa-arrow-right"></i></a>
                                     </div>
                                 </div>
