@@ -1284,27 +1284,27 @@ if ($result === false) {
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
+                        <li><a href="https://aaravtechsolutions.com"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="https://aaravtechsolutions.com/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="https://aaravtechsolutions.com/blogs.php"><i class="fas fa-chevron-right"></i> Blogs</a></li>
                         <!-- <li><a href="career.php"><i class="fas fa-chevron-right"></i>Career</a></li> -->
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="https://aaravtechsolutions.com/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
+                        <li><a href="https://aaravtechsolutions.com/custom-website-development-services.html"><i class="fas fa-chevron-right"></i> Web
                                 Development</a></li>
-                        <li><a href="web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Web/Mobile
+                        <li><a href="https://aaravtechsolutions.com/web-and-mobile-app-development.html"><i class="fas fa-chevron-right"></i> Web/Mobile
                                 Apps</a></li>
-                        <li><a href="graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
+                        <li><a href="https://aaravtechsolutions.com/graphic-designing.html"><i class="fas fa-chevron-right"></i>Graphic Designing</a>
                         </li>
-                        <li><a href="digital-marketing-services.html"><i class="fas fa-chevron-right"></i> Digital
+                        <li><a href="https://aaravtechsolutions.com/digital-marketing-services.html"><i class="fas fa-chevron-right"></i> Digital
                                 Marketing</a></li>
-                        <li><a href="ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                        <li><a href="https://aaravtechsolutions.com/ui-ux-design-services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
                         </li>
-                        <li><a href="bpo-services.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
+                        <li><a href="https://aaravtechsolutions.com/bpo-services.html"><i class="fas fa-chevron-right"></i>BPO Services</a></li>
                     </ul>
                 </div>
 
@@ -1333,9 +1333,9 @@ if ($result === false) {
                 <p style="margin-bottom:0;">&copy; 2026 Aarav Tech Solutions. All Rights Reserved.</p>
                 <p style="margin-bottom:0;">|</p>
                 <div class="footer-bottom-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-and-conditions.html">Terms of Service</a>
-                    <a href="sitemap.html">Sitemap</a>
+                    <a href="https://aaravtechsolutions.com/privacy-policy.html">Privacy Policy</a>
+                    <a href="https://aaravtechsolutions.com/terms-and-conditions.html">Terms of Service</a>
+                    <a href="https://aaravtechsolutions.com/sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>
